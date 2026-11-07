@@ -1,0 +1,17 @@
+# Loader rows for Session Link.
+#
+# One Host row carries both halves: the Host side registers the link store, the
+# three tools, the standing peer line, and the browser routes; the browser half
+# is discovered from this same package because it declares `dsh.client`, so the
+# row's id is also the Settings entry id the panel binds to.
+#
+# The row id is stable so the profile patch can tune the rules below without
+# re-inserting the plugin.
+- insert:
+    - id: session-link
+      name: 'dsh-interlink'
+      config:
+        # Off: a session belongs to no link until someone names one.
+        autoLinks: false
+        linkTools: true
+        contextLine: true

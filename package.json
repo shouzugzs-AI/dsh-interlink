@@ -1,0 +1,73 @@
+{
+  "name": "dsh-interlink",
+  "version": "1.0.0",
+  "description": "Let DeepSeek Harness sessions message each other over named links you create by hand — with a plain-text transcript of every AI-to-AI exchange",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "plugin.js",
+    "link.js",
+    "link-store.js",
+    "catalogue.js",
+    "catalogue-types.js",
+    "routes.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "agent",
+    "multi-agent",
+    "session",
+    "interlink",
+    "messaging",
+    "relay"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shouzugzs-AI/dsh-interlink.git"
+  },
+  "homepage": "https://github.com/shouzugzs-AI/dsh-interlink#readme",
+  "bugs": {
+    "url": "https://github.com/shouzugzs-AI/dsh-interlink/issues"
+  },
+  "scripts": {
+    "test": "node test.mjs && node test-client.mjs",
+    "test:host": "node test.mjs",
+    "test:client": "node test-client.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": "~3.18.5"
+  },
+  "license": "MIT",
+  "author": "shouzugzs-AI (https://github.com/shouzugzs-AI)"
+}

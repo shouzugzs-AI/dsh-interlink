@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session Link",
+    "description": "Lets sessions in different conversations message each other, with a link scope you name by hand: sessions on the same link can talk, sessions on different links cannot, and a session on no link talks to nobody."
+  }
+}
